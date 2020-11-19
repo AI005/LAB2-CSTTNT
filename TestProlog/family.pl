@@ -166,7 +166,7 @@ granddaughter(GD, GP) :-
 sibling(Person1, Person2) :-
     parent(Parent, Person1),
     parent(Parent, Person2),
-    Person1 \= Person2.
+    Person1 \== Person2.
 
 brother(Person, Sibling) :-
     sibling(Person, Sibling),
