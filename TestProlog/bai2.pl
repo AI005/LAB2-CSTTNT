@@ -9,12 +9,12 @@
 parent('Rebecca Bell', 'Jennifer Howard').
 parent('Rebecca Bell', 'Lawrence Howard').
 parent('Rebecca Bell', 'Morrison Howard').
-parent('Rebecca Bell', 'Lawrence Howard').
+parent('Rebecca Bell', 'Matt Howard').
 parent('Rebecca Bell', 'Malone Howard').
 parent('Stephen Howard', 'Jennifer Howard').
 parent('Stephen Howard', 'Lawrence Howard').
 parent('Stephen Howard', 'Morrison Howard').
-parent('Stephen Howard', 'Lawrence Howard').
+parent('Stephen Howard', 'Matt Howard').
 parent('Stephen Howard', 'Malone Howard').
 
 % Parent F2
@@ -35,8 +35,8 @@ parent('Morrison Howard', 'Terry Howard').
 
 parent('Jean Garcia', 'Louise Howard').
 parent('Jean Garcia', 'Teresa Howard').
-parent('Lawrence Howard', 'Louise Howard').
-parent('Lawrence Howard', 'Teresa Howard').
+parent('Matt Howard', 'Louise Howard').
+parent('Matt Howard', 'Teresa Howard').
 
 % Parent F3
 parent('Evelyn Gray', 'Anne Ramirez').
@@ -70,7 +70,7 @@ male('Andrew Gray').
 male('Phillip Thomas').
 male('Steve Roberts').
 male('Morrison Howard').
-male('Lawrence Howard').
+male('Matt Howard').
 male('Malone Howard').
 male('Robert Gray').
 male('Dennis Ramirez').
@@ -110,24 +110,57 @@ female('Wanda Young').
 
 % married
 married('Rebecca Bell', 'Stephen Howard').
+married('Stephen Howard', 'Rebecca Bell').
+
 married('Jennifer Howard', 'Andrew Gray').
+married('Andrew Gray', 'Jennifer Howard').
+
 married('Phillip Thomas', 'Lawrence Howard').
-married('Lawrence Howard', 'Beverly Cook').
+married('Lawrence Howard', 'Phillip Thomas').
+
+married('Matt Howard', 'Beverly Cook').
+married('Beverly Cook', 'Matt Howard').
+
+married('Dennis Ramirez', 'Evelyn Gray').
 married('Evelyn Gray', 'Dennis Ramirez').
+
+married('Juan Gray', 'Anna Roberts').
 married('Anna Roberts', 'Juan Gray').
+
+married('Brian Cook', 'Kelly Thomas').
 married('Kelly Thomas', 'Brian Cook').
+
+married('Ronald Rogers', 'Diana Thomas').
 married('Diana Thomas', 'Ronald Rogers').
 
 % divorced
+divorced('Steve Roberts', 'Lawrence Howard').
 divorced('Lawrence Howard', 'Steve Roberts').
+
+divorced('Christine Diaz', 'Morrison Howard').
 divorced('Morrison Howard', 'Christine Diaz').
-divorced('Jean Garcia', 'Lawrence Howard').
+
+divorced('Matt Howard', 'Jean Garcia').
+divorced('Jean Garcia', 'Matt Howard').
+
 divorced('Marilyn Perry', 'Malone Howard').
+divorced('Malone Howard', 'Marilyn Perry').
+
+divorced('Teresa Howard', 'Jeremy Green').
 divorced('Jeremy Green', 'Teresa Howard').
+
 divorced('Edward Cook', 'Emily Flores').
+divorced('Emily Flores', 'Edward Cook').
+
+divorced('Jason Phillips', 'Diana Thomas').
+divorced('Diana Thomas', 'Jason Phillips').
+
 
 % engaged
 engaged('Ronald Phillips', 'Mary Bryant').
+engaged('Mary Bryant', 'Ronald Phillips').
+
+engaged('Wanda Young', 'Joshua Green').
 engaged('Joshua Green', 'Wanda Young').
 
 % -------------------------------
@@ -181,7 +214,7 @@ stepson(StepChild, StepParent) :-
     stepparent(StepParent, StepChild),
     male(StepChild).
 
-stepdaughter(StepChild, Parent)
+stepdaughter(StepChild, Parent) :-
     stepparent(StepParent, StepChild),
     female(StepChild).
 
